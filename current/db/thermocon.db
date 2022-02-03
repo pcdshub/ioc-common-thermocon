@@ -126,7 +126,7 @@ record(bi, $(DEV):THERMOSTAT_RBV)
     field(ONAM, "ON")
 }
 
-record(bi, "$(DEV):ABNORMAL_OUT_RBV")
+record(bi, $(DEV):ABNORMAL_OUT_RBV)
 {
     field(DESC,"something")
     field(INP, "$(DEV):ALARM_FLAG_1.B15 NPP NMS")
@@ -134,7 +134,7 @@ record(bi, "$(DEV):ABNORMAL_OUT_RBV")
     field(ONAM, "ON")
 }
 
-record(mbbiDirect, "$(DEV):ALARM_FLAG_2_RBV")
+record(mbbiDirect, $(DEV):ALARM_FLAG_2_RBV)
 {       
    	    field(DTYP, "asynUInt32Digital")
         field(INP, "@asynMask(THERMOCON$(N)_read_reg,5,0x301F)UINT16")
@@ -149,7 +149,7 @@ record(mbbiDirect, "$(DEV):ALARM_FLAG_2_RBV")
         field(FLNK, "$(DEV):TEMP_LOW_LIM_RBV.PROC")
 }
 
-record(bi, "$(DEV):LOW_FLOW_RBV")
+record(bi, $(DEV):LOW_FLOW_RBV)
 {
     field(DESC,"something")
     field(INP, "(DEV):ALARM_FLAG_2_RBV.B0 NPP NMS")
@@ -157,7 +157,7 @@ record(bi, "$(DEV):LOW_FLOW_RBV")
     field(ONAM, "ON")
 }
 
-record(bi, "$(DEV):INT_TEMP_SENS_DISCONNECT_RBV")
+record(bi, $(DEV):INT_TEMP_SENS_DISCONNECT_RBV)
 {
     field(DESC,"something")
     field(INP, "$(DEV):ALARM_FLAG_2_RBV.B1 NPP NMS")
@@ -165,7 +165,7 @@ record(bi, "$(DEV):INT_TEMP_SENS_DISCONNECT_RBV")
     field(ONAM, "ON")
 }
 
-record(bi, "$(DEV):EXT_TEMP_SENS_DISCONNECT_RBV")
+record(bi, $(DEV):EXT_TEMP_SENS_DISCONNECT_RBV)
 {
     field(DESC,"something")
     field(INP, "$(DEV):ALARM_FLAG_2_RBV.B2 NPP NMS")
@@ -173,14 +173,14 @@ record(bi, "$(DEV):EXT_TEMP_SENS_DISCONNECT_RBV")
     field(ONAM, "ON")
 }
 
-record(bi, "$(DEV):ABNORMAL_AUTO_TUNING_RBV")
+record(bi, $(DEV):ABNORMAL_AUTO_TUNING_RBV)
 {
     field(DESC,"something")
     field(INP, "(DEV):ALARM_FLAG_2_RBV.B3 NPP NMS")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
 }
-record(bi, "$(DEV):LOW_FLUID_RBV")
+record(bi, $(DEV):LOW_FLUID_RBV)
 {
     field(DESC,"something")
     field(INP, "$(DEV):ALARM_FLAG_2_RBV.B4 NPP NMS")
@@ -188,7 +188,7 @@ record(bi, "$(DEV):LOW_FLUID_RBV")
     field(ONAM, "ON")
 }
 
-record(bi, "$(DEV):TEMP_UPPER_LIM_RBV")
+record(bi, $(DEV):TEMP_UPPER_LIM_RBV)
 {
     field(DESC,"something")
     field(INP, "$(DEV):ALARM_FLAG_2_RBV.B12 NPP NMS")
@@ -196,7 +196,7 @@ record(bi, "$(DEV):TEMP_UPPER_LIM_RBV")
     field(ONAM, "ON")
 }
 
-record(bi, "$(DEV):TEMP_LOW_LIM_RBV")
+record(bi, $(DEV):TEMP_LOW_LIM_RBV)
 {
     field(DESC,"something")
     field(INP, "$(DEV):ALARM_FLAG_2_RBV.B13 NPP NMS")
@@ -204,7 +204,7 @@ record(bi, "$(DEV):TEMP_LOW_LIM_RBV")
     field(ONAM, "ON")
 }
 
-record(ai, "$(DEV):OUT_RATIO_RAW_RBV")
+record(ai, $(DEV):OUT_RATIO_RAW_RBV)
 {       
         field(DESC, "Raw output ratio data")
         field(DTYP, "asynInt32")
@@ -212,7 +212,7 @@ record(ai, "$(DEV):OUT_RATIO_RAW_RBV")
         field(VAL, "0")
 }
  
-record(calc, "$(DEV):OUT_RATIO_RBV")
+record(calc, $(DEV):OUT_RATIO_RBV)
 {
         field(DESC, "Output ratio from -100% to 100%")
         field(INPA, "$(DEV):OUT_RATIO_RAW_RBV PP NMS")
@@ -221,7 +221,7 @@ record(calc, "$(DEV):OUT_RATIO_RBV")
 	    field(EGU, "%")
 }
 
-record(mbbi, "$(DEV):CTRL_OP_RBV")
+record(mbbi, $(DEV):CTRL_OP_RBV)
 {
     field(DESC, "Operation mode read back")
     field(DTYP,"asynUInt32Digital")
@@ -238,7 +238,7 @@ record(mbbi, "$(DEV):CTRL_OP_RBV")
     field(FRST, "External tune control")   
 }
 
-record(mbbo, "$(DEV):CTRL_OP_SET")
+record(mbbo, $(DEV):CTRL_OP_SET)
 {
     field(DESC, "Set operation mode")
     field(OMSL, "supervisory")
@@ -256,7 +256,7 @@ record(mbbo, "$(DEV):CTRL_OP_SET")
     field(FRST, "External tune control")   
 }
 
-record(ao, "$(DEV):TARG_TEMP_SET")
+record(ao, $(DEV):TARG_TEMP_SET)
 {
     field(DESC, "Set target temp")
     field(OMSL, "supervisory")
@@ -266,13 +266,13 @@ record(ao, "$(DEV):TARG_TEMP_SET")
     field(EGU, "C")
     field(OUT, "$(DEV):TARG_TEMP_RAW.A PP NMS")
 }
-record(calcout, "$(DEV):TARG_TEMP_RAW")
+record(calcout, $(DEV):TARG_TEMP_RAW)
 {
         field(DESC, "convert temp to device format")
         field(CALC, "A*100")
         field(OUT, "$(DEV):TARG_TEMP_RAW_SET PP NMS")
 }
-record(longout, "$(DEV):TARG_TEMP_RAW_SET")
+record(longout, $(DEV):TARG_TEMP_RAW_SET)
 {
     field(DESC, "send temp in raw format to device")
     field(OMSL, "supervisory")
