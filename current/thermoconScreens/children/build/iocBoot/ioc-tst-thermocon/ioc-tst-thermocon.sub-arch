@@ -1,0 +1,6 @@
+# thermocon IOC instance autosave file
+
+file thermocon.archive
+{
+	{ IOC = "IOC:TST", BASE="TST:TMO" }
+}
