@@ -86,3 +86,10 @@ $(IOC):SR_5_Time				30
 $(IOC):SR_6_Time				30
 $(IOC):SR_7_Time				30
 
+$(BASE):TEMP_RBV 60 monitor
+$(BASE):CTRL_OP_RBV 60 monitor
+$(BASE):TARG_TEMP_RBV 60 monitor
+$(BASE):STATUS_RUN_FLAG_RBV 60 monitor
+$(BASE):STATUS_ALARM_FLAG_RBV 60 monitor
+$(BASE):STATUS_WARNING_FLAG_RBV 60 monitor
+$(BASE):OUT_RATIO_RBV 60 monitor
