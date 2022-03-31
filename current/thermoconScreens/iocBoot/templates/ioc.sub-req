@@ -1,8 +1,0 @@
-# thermocon IOC instance autosave file
-
-$$LOOP(THERMOCON)
-file thermocon.req
-{
-	{ IOC = "$$IOC_PV", BASE="$$BASE" }
-}
-$$ENDLOOP(THERMOCON)

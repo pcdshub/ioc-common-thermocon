@@ -373,7 +373,7 @@ static struct iocshVarDef vardefs[] = {
 int thermocon_registerRecordDeviceDriver(DBBASE *pbase)
 {
     static int executed = 0;
-    const char *bldTop = "/reg/g/pcds/epics-dev/janezg/thermocon/current";
+    const char *bldTop = "/reg/g/pcds/epics-dev/janezg/git_iocs/ioc-tmo-kbo-chiller/current";
     const char *envTop = getenv("TOP");
 
     if (envTop && strcmp(envTop, bldTop)) {
