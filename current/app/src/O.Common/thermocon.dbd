@@ -1074,7 +1074,6 @@ recordtype(calcout) {
 }
 device(calcout, CONSTANT, devCalcoutSoft, "Soft Channel")
 device(calcout, CONSTANT, devCalcoutSoftCallback, "Async Soft Channel")
-device(calcout, INST_IO, devcalcoutStream, "stream")
 recordtype(state) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -2130,7 +2129,9 @@ recordtype(lsi) {
 }
 device(lsi, CONSTANT, devLsiSoft, "Soft Channel")
 device(lsi, INST_IO, devLsiEnviron, "getenv")
-device(lsi, INST_IO, devlsiStream, "stream")
+device(lsi, INST_IO, asynLsiOctetCmdResponse, "asynOctetCmdResponse")
+device(lsi, INST_IO, asynLsiOctetWriteRead, "asynOctetWriteRead")
+device(lsi, INST_IO, asynLsiOctetRead, "asynOctetRead")
 recordtype(int64out) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -2594,7 +2595,7 @@ recordtype(int64out) {
 }
 device(int64out, CONSTANT, devI64outSoft, "Soft Channel")
 device(int64out, CONSTANT, devI64outSoftCallback, "Async Soft Channel")
-device(int64out, INST_IO, devint64outStream, "stream")
+device(int64out, INST_IO, asynInt64Out, "asynInt64")
 recordtype(seq) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -3568,7 +3569,6 @@ device(stringout, CONSTANT, devSoSoft, "Soft Channel")
 device(stringout, CONSTANT, devSoSoftCallback, "Async Soft Channel")
 device(stringout, INST_IO, devSoStdio, "stdio")
 device(stringout, INST_IO, asynSoOctetWrite, "asynOctetWrite")
-device(stringout, INST_IO, devstringoutStream, "stream")
 recordtype(aai) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -3956,7 +3956,6 @@ recordtype(aai) {
     }
 }
 device(aai, CONSTANT, devAaiSoft, "Soft Channel")
-device(aai, INST_IO, devaaiStream, "stream")
 recordtype(permissive) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -4681,7 +4680,6 @@ device(bo, INST_IO, devBoGeneralTime, "General Time")
 device(bo, INST_IO, devBoDbState, "Db State")
 device(bo, INST_IO, asynBoInt32, "asynInt32")
 device(bo, INST_IO, asynBoUInt32Digital, "asynUInt32Digital")
-device(bo, INST_IO, devboStream, "stream")
 recordtype(dfanout) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -5891,7 +5889,6 @@ device(mbbi, CONSTANT, devMbbiSoftRaw, "Raw Soft Channel")
 device(mbbi, CONSTANT, devMbbiSoftCallback, "Async Soft Channel")
 device(mbbi, INST_IO, asynMbbiInt32, "asynInt32")
 device(mbbi, INST_IO, asynMbbiUInt32Digital, "asynUInt32Digital")
-device(mbbi, INST_IO, devmbbiStream, "stream")
 recordtype(event) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -7391,7 +7388,6 @@ device(mbbo, CONSTANT, devMbboSoftRaw, "Raw Soft Channel")
 device(mbbo, CONSTANT, devMbboSoftCallback, "Async Soft Channel")
 device(mbbo, INST_IO, asynMbboInt32, "asynInt32")
 device(mbbo, INST_IO, asynMbboUInt32Digital, "asynUInt32Digital")
-device(mbbo, INST_IO, devmbboStream, "stream")
 recordtype(ao) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -7978,7 +7974,7 @@ device(ao, CONSTANT, devAoSoftCallback, "Async Soft Channel")
 device(ao, INST_IO, devAoStats, "IOC stats")
 device(ao, INST_IO, asynAoInt32, "asynInt32")
 device(ao, INST_IO, asynAoFloat64, "asynFloat64")
-device(ao, INST_IO, devaoStream, "stream")
+device(ao, INST_IO, asynAoInt64, "asynInt64")
 recordtype(aao) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -8366,7 +8362,6 @@ recordtype(aao) {
     }
 }
 device(aao, CONSTANT, devAaoSoft, "Soft Channel")
-device(aao, INST_IO, devaaoStream, "stream")
 recordtype(mbbiDirect) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -8884,7 +8879,6 @@ device(mbbiDirect, CONSTANT, devMbbiDirectSoft, "Soft Channel")
 device(mbbiDirect, CONSTANT, devMbbiDirectSoftRaw, "Raw Soft Channel")
 device(mbbiDirect, CONSTANT, devMbbiDirectSoftCallback, "Async Soft Channel")
 device(mbbiDirect, INST_IO, asynMbbiDirectUInt32Digital, "asynUInt32Digital")
-device(mbbiDirect, INST_IO, devmbbiDirectStream, "stream")
 recordtype(asyn) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -10051,7 +10045,9 @@ device(waveform, INST_IO, asynFloat32ArrayWfOut, "asynFloat32ArrayOut")
 device(waveform, INST_IO, asynFloat64ArrayWfIn, "asynFloat64ArrayIn")
 device(waveform, INST_IO, asynFloat64ArrayWfOut, "asynFloat64ArrayOut")
 device(waveform, INST_IO, asynFloat64TimeSeries, "asynFloat64TimeSeries")
-device(waveform, INST_IO, devwaveformStream, "stream")
+device(waveform, INST_IO, asynInt64ArrayWfIn, "asynInt64ArrayIn")
+device(waveform, INST_IO, asynInt64ArrayWfOut, "asynInt64ArrayOut")
+device(waveform, INST_IO, asynInt64TimeSeries, "asynInt64TimeSeries")
 recordtype(fanout) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -10869,7 +10865,7 @@ device(longin, CONSTANT, devLiSoftCallback, "Async Soft Channel")
 device(longin, INST_IO, devLiGeneralTime, "General Time")
 device(longin, INST_IO, asynLiInt32, "asynInt32")
 device(longin, INST_IO, asynLiUInt32Digital, "asynUInt32Digital")
-device(longin, INST_IO, devlonginStream, "stream")
+device(longin, INST_IO, asynLiInt64, "asynInt64")
 recordtype(printf) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -11233,6 +11229,7 @@ recordtype(printf) {
 device(printf, CONSTANT, devPrintfSoft, "Soft Channel")
 device(printf, CONSTANT, devPrintfSoftCallback, "Async Soft Channel")
 device(printf, INST_IO, devPrintfStdio, "stdio")
+device(printf, INST_IO, asynPfOctetWrite, "asynOctetWrite")
 recordtype(sel) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -12190,7 +12187,6 @@ device(bi, CONSTANT, devBiSoftCallback, "Async Soft Channel")
 device(bi, INST_IO, devBiDbState, "Db State")
 device(bi, INST_IO, asynBiInt32, "asynInt32")
 device(bi, INST_IO, asynBiUInt32Digital, "asynUInt32Digital")
-device(bi, INST_IO, devbiStream, "stream")
 recordtype(lso) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -12584,7 +12580,7 @@ recordtype(lso) {
 device(lso, CONSTANT, devLsoSoft, "Soft Channel")
 device(lso, CONSTANT, devLsoSoftCallback, "Async Soft Channel")
 device(lso, INST_IO, devLsoStdio, "stdio")
-device(lso, INST_IO, devlsoStream, "stream")
+device(lso, INST_IO, asynLsoOctetWrite, "asynOctetWrite")
 recordtype(subArray) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -14109,7 +14105,6 @@ device(mbboDirect, CONSTANT, devMbboDirectSoft, "Soft Channel")
 device(mbboDirect, CONSTANT, devMbboDirectSoftRaw, "Raw Soft Channel")
 device(mbboDirect, CONSTANT, devMbboDirectSoftCallback, "Async Soft Channel")
 device(mbboDirect, INST_IO, asynMbboDirectUInt32Digital, "asynUInt32Digital")
-device(mbboDirect, INST_IO, devmbboDirectStream, "stream")
 recordtype(longout) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -14575,7 +14570,7 @@ device(longout, CONSTANT, devLoSoft, "Soft Channel")
 device(longout, CONSTANT, devLoSoftCallback, "Async Soft Channel")
 device(longout, INST_IO, asynLoInt32, "asynInt32")
 device(longout, INST_IO, asynLoUInt32Digital, "asynUInt32Digital")
-device(longout, INST_IO, devlongoutStream, "stream")
+device(longout, INST_IO, asynLoInt64, "asynInt64")
 recordtype(aSub) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -17589,7 +17584,7 @@ recordtype(int64in) {
 }
 device(int64in, CONSTANT, devI64inSoft, "Soft Channel")
 device(int64in, CONSTANT, devI64inSoftCallback, "Async Soft Channel")
-device(int64in, INST_IO, devint64inStream, "stream")
+device(int64in, INST_IO, asynInt64In, "asynInt64")
 recordtype(ai) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -18132,7 +18127,7 @@ device(ai, INST_IO, asynAiInt32, "asynInt32")
 device(ai, INST_IO, asynAiInt32Average, "asynInt32Average")
 device(ai, INST_IO, asynAiFloat64, "asynFloat64")
 device(ai, INST_IO, asynAiFloat64Average, "asynFloat64Average")
-device(ai, INST_IO, devaiStream, "stream")
+device(ai, INST_IO, asynAiInt64, "asynInt64")
 recordtype(stringin) {
     %#include "epicsTypes.h"
     %#include "link.h"
@@ -18488,8 +18483,6 @@ device(stringin, INST_IO, devStringinEpics, "IOC epics var")
 device(stringin, INST_IO, asynSiOctetCmdResponse, "asynOctetCmdResponse")
 device(stringin, INST_IO, asynSiOctetWriteRead, "asynOctetWriteRead")
 device(stringin, INST_IO, asynSiOctetRead, "asynOctetRead")
-device(stringin, INST_IO, devstringinStream, "stream")
-driver(stream)
 driver(drvAsyn)
 link(state, lnkStateIf)
 link(calc, lnkCalcIf)
@@ -18507,13 +18500,13 @@ registrar(asynRegister)
 registrar(asynInterposeFlushRegister)
 registrar(drvAsynIPPortRegisterCommands)
 registrar(arrInitialize)
-registrar(AsynDriverInterfaceRegistrar)
+registrar(asynInterposeEchoRegister)
 registrar(caPutLogRegister)
 registrar(asInitHooksRegister)
-registrar(streamRegistrar)
+registrar(asynInterposeDelayRegister)
 registrar(dbndInitialize)
-registrar(drvAsynIPServerPortRegisterCommands)
 registrar(modbusInterposeRegister)
+registrar(drvAsynIPServerPortRegisterCommands)
 registrar(configMenuRegistrar)
 registrar(asSub)
 registrar(rsrvRegistrar)
@@ -18521,35 +18514,33 @@ registrar(asynInterposeEosRegister)
 function(scanMon)
 function(rebootProc)
 function(scanMonInit)
-variable(callbackParallelThreadsDefault, int)
-variable(dbAccessDebugPUTF, int)
-variable(dbLoadSuspendOnError, int)
-variable(streamError, int)
-variable(dbBptNotMonotonic, int)
-variable(atExitDebug, int)
-variable(boHIGHlimit, double)
-variable(save_restoreNumSeqFiles, int)
-variable(dbRecordsAbcSorted, int)
-variable(seqDLYlimit, double)
-variable(histogramSDELprecision, int)
-variable(dbThreadRealtimeLock, int)
 variable(dbTemplateMaxVars, int)
 variable(lnkDebug_debug, int)
 variable(asCaDebug, int)
+variable(callbackParallelThreadsDefault, int)
 variable(save_restoreRemountThreshold, int)
+variable(dbAccessDebugPUTF, int)
+variable(dbLoadSuspendOnError, int)
 variable(dbRecordsOnceOnly, int)
 variable(save_restoreDebug, int)
 variable(save_restoreDatedBackupFiles, int)
 variable(calcoutODLYlimit, double)
-variable(streamDebug, int)
-variable(save_restoreIncompleteSetsOk, int)
 variable(configMenuDebug, int)
+variable(save_restoreIncompleteSetsOk, int)
+variable(dbBptNotMonotonic, int)
+variable(atExitDebug, int)
+variable(boHIGHlimit, double)
 variable(dbJLinkDebug, int)
 variable(dbConvertStrict, int)
 variable(seqDLYprecision, int)
 variable(dbQuietMacroWarnings, int)
+variable(save_restoreNumSeqFiles, int)
 variable(boHIGHprecision, int)
+variable(dbRecordsAbcSorted, int)
+variable(seqDLYlimit, double)
 variable(calcoutODLYprecision, int)
+variable(histogramSDELprecision, int)
+variable(dbThreadRealtimeLock, int)
 variable(CASDEBUG, int)
 variable(save_restoreLogMissingRecords, int)
 variable(save_restoreSeqPeriodInSeconds, int)

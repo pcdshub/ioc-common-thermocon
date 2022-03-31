@@ -15,45 +15,30 @@ cd( "$(IOCTOP)" )
 
 # Register all support components
 dbLoadDatabase("dbd/thermocon.dbd")
-
 thermocon_registerRecordDeviceDriver(pdbbase)
-
-# Set this to enable LOTS of stream module diagnostics
-#var streamDebug 1
 
 # Configure each device
 
 $$LOOP(THERMOCON)
-drvAsynIPPortConfigure( "THERMOCON$$INDEX", "$$HOST:502 TCP", 0, 0, 1 )
-modbusInterposeConfig("THERMOCON$$INDEX",0,5000,0)
+drvAsynIPPortConfigure( "THERMOCON$$INDEX", "$$HOST:$$PORT TCP", 0, 0, 0 )
+#asynInterposeEosConfig( "THERMOCON$$INDEX", 0, 1, 1 )
+asynOctetSetOutputEos( "THERMOCON$$INDEX", 0, "\r\n" )
+asynOctetSetInputEos ( "THERMOCON$$INDEX", 0, "\r\n" )
+modbusInterposeConfig( "THERMOCON$$INDEX", 2, 2000, 2000)
 $$ENDLOOP(THERMOCON)
-
-# Register definitions are From Setra modbus datasheet go as followed
-#
-# Setra$(N)_set_reg-  Writes to device a register #8000. Used to read snapshot of Setra_read_register records.
-#
-# Setra$(N)_samp_reg- ReadWrite device registers #5000-#5032.
-#
-# Setra$(N)_read_reg- ReadWrite device registers #9000-#9085. 
- 
 
 # drvModbusAsynConfigure(modbusPort,  asynPort,  slave address, modbus_function, offset, data_length,
 #                        data_type, timeout, debug name)
 
 $$LOOP(THERMOCON)
-#drvModbusAsynConfigure(  "Setra$$(INDEX)_set_reg",  "THERMOCON$$INDEX",  1,  16,  8000,   4,  0,  1000, "THERMOCON$$(INDEX)_Set")
-#drvModbusAsynConfigure(  "Setra$$(INDEX)_samp_reg", "THERMOCON$$INDEX",  1,  16,  5000,  32,  0,  1000, "THERMOCON$$(INDEX)_Samp")
-#drvModbusAsynConfigure(  "Setra$$(INDEX)_read_reg", "THERMOCON$$INDEX",  1,   3,  9000,  85,  0,  3000, "THERMOCON$$(INDEX)_Read")
-
-
-drvModbusAsynConfigure(  "THERMOCON$$(INDEX)_read_reg", "THERMOCON$$INDEX",  1,   3,  0x0040,  6,  0,  3000, "THERMOCON$$(INDEX)_Read")
-drvModbusAsynConfigure(  "THERMOCON$$(INDEX)_set_reg", "THERMOCON$$INDEX",  1,   6,  0x0050,  1,  0,  3000, "THERMOCON$$(INDEX)_set")
+drvModbusAsynConfigure(  "THERMOCON$$(INDEX)_read_reg" , "THERMOCON$$INDEX",  1,   3,  64,  7,  0,  4000, "THERMOCON$$(INDEX)_Read"    )
+drvModbusAsynConfigure(  "THERMOCON$$(INDEX)_read_ctrl", "THERMOCON$$INDEX",  1,   3,  80,  2,  0,  4000, "THERMOCON$$(INDEX)_ReadCtrl")
+drvModbusAsynConfigure(  "THERMOCON$$(INDEX)_set_ctrl" , "THERMOCON$$INDEX",  1,   6,  80,  1,  0,  2000, "THERMOCON$$(INDEX)_SetCtrl" )
+drvModbusAsynConfigure(  "THERMOCON$$(INDEX)_set_temp" , "THERMOCON$$INDEX",  1,   6,  81,  1,  0,  2000, "THERMOCON$$(INDEX)_SetTemp" )
 
 # USED AS DEBUGGING TOOL
-#asynSetTraceMask("Setra$$(INDEX)_set_reg", 0, 9)
-#asynSetTraceMask("Setra$$(INDEX)_read_register", 0, 9)
-#asynSetTraceIOMask("THERMOCON$$INDEX", 0, 4)
-#asynSetTraceMask("THERMOCON$$INDEX", 0, 9) 
+#asynSetTraceIOMask("THERMOCON$$INDEX", 0, 0x6)
+#asynSetTraceMask("THERMOCON$$INDEX", 0, 0x9) 
 
 # Send trace output to motor specific log files
 #asynSetTraceFile(   "THERMOCON$$INDEX", 0, "/reg/d/iocData/$(IOC)/logs/THERMOCON$$INDEX.log" )

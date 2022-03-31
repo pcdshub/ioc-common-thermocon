@@ -57,24 +57,28 @@
     /reg/g/pcds/epics/R7.0.2-2.0/modules/iocAdmin/R3.1.15-1.9.0/dbd/iocAdmin.dbd \
     /reg/g/pcds/epics/R7.0.2-2.0/modules/iocAdmin/R3.1.15-1.9.0/dbd/devIocStats.dbd \
     /reg/g/pcds/epics/R7.0.2-2.0/modules/autosave/R5.8-2.1.0/dbd/asSupport.dbd \
-    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/asyn.dbd \
-    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/asynRecord.dbd \
-    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devEpics.dbd \
-    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynOctet.dbd \
-    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynInt32.dbd \
-    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynInt8Array.dbd \
-    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynInt16Array.dbd \
-    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynInt32Array.dbd \
-    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynInt32TimeSeries.dbd \
-    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynFloat64.dbd \
-    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynFloat32Array.dbd \
-    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynFloat64Array.dbd \
-    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynFloat64TimeSeries.dbd \
-    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynUInt32Digital.dbd \
-    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynRecord.dbd \
-    /reg/g/pcds/epics/R7.0.2-2.0/modules/streamdevice/R2.8.9-1.0.1/dbd/stream.dbd \
-    /reg/g/pcds/epics/R7.0.2-2.0/modules/modbus/R2.11-1.0.0/dbd/modbus.dbd \
-    /reg/g/pcds/epics/R7.0.2-2.0/modules/modbus/R2.11-1.0.0/dbd/modbusSupport.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/asyn.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/asynRecord.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devEpics.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynOctet.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynInt32.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynInt8Array.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynInt16Array.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynInt32Array.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynInt32TimeSeries.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynUInt32Digital.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynFloat64.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynFloat32Array.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynFloat64Array.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynFloat64TimeSeries.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynRecord.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynOctetLs.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynInt64.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynInt64Array.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynInt64TimeSeries.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynInt64Misc.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/modbus/R3.2-1.0.1/dbd/modbus.dbd \
+    /reg/g/pcds/epics/R7.0.2-2.0/modules/modbus/R3.2-1.0.1/dbd/modbusSupport.dbd \
     /reg/g/pcds/epics/R7.0.2-2.0/modules/caPutLog/R3.5-1.0.0/dbd/caPutLog.dbd
 
 /reg/g/pcds/epics/base/R7.0.2-2.0/dbd/base.dbd:
@@ -136,23 +140,27 @@
 /reg/g/pcds/epics/R7.0.2-2.0/modules/iocAdmin/R3.1.15-1.9.0/dbd/iocAdmin.dbd:
 /reg/g/pcds/epics/R7.0.2-2.0/modules/iocAdmin/R3.1.15-1.9.0/dbd/devIocStats.dbd:
 /reg/g/pcds/epics/R7.0.2-2.0/modules/autosave/R5.8-2.1.0/dbd/asSupport.dbd:
-/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/asyn.dbd:
-/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/asynRecord.dbd:
-/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devEpics.dbd:
-/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynOctet.dbd:
-/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynInt32.dbd:
-/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynInt8Array.dbd:
-/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynInt16Array.dbd:
-/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynInt32Array.dbd:
-/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynInt32TimeSeries.dbd:
-/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynFloat64.dbd:
-/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynFloat32Array.dbd:
-/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynFloat64Array.dbd:
-/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynFloat64TimeSeries.dbd:
-/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynUInt32Digital.dbd:
-/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.32-1.0.0/dbd/devAsynRecord.dbd:
-/reg/g/pcds/epics/R7.0.2-2.0/modules/streamdevice/R2.8.9-1.0.1/dbd/stream.dbd:
-/reg/g/pcds/epics/R7.0.2-2.0/modules/modbus/R2.11-1.0.0/dbd/modbus.dbd:
-/reg/g/pcds/epics/R7.0.2-2.0/modules/modbus/R2.11-1.0.0/dbd/modbusSupport.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/asyn.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/asynRecord.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devEpics.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynOctet.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynInt32.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynInt8Array.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynInt16Array.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynInt32Array.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynInt32TimeSeries.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynUInt32Digital.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynFloat64.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynFloat32Array.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynFloat64Array.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynFloat64TimeSeries.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynRecord.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynOctetLs.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynInt64.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynInt64Array.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynInt64TimeSeries.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/asyn/R4.39-1.0.1/dbd/devAsynInt64Misc.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/modbus/R3.2-1.0.1/dbd/modbus.dbd:
+/reg/g/pcds/epics/R7.0.2-2.0/modules/modbus/R3.2-1.0.1/dbd/modbusSupport.dbd:
 /reg/g/pcds/epics/R7.0.2-2.0/modules/caPutLog/R3.5-1.0.0/dbd/caPutLog.dbd:
 ../O.Common/thermocon.dbd: ../Makefile

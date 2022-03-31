@@ -29,17 +29,22 @@ record(mbbiDirect, "$(DEV):STATUS_RBV")
     field(INP,  "@asynMask(THERMOCON$(N)_read_reg,3,0x0007)UINT16")
     field(SCAN, "2 second")
     field(VAL,  "0")
-    field(FLNK, "$(DEV):RUN_FLAG_RBV.PROC")
-    field(FLNK, "$(DEV):ALARM_FLAG_RBV.PROC")
-    field(FLNK, "$(DEV):WARNING_FLAG_RBV.PROC")
+    field(FLNK, "$(DEV):STATUS_FANOUT")
+}
+
+record(fanout, "$(DEV):STATUS_FANOUT")
+{
+    field(LNK0, "$(DEV):STATUS_RUN_FLAG_RBV")
+    field(LNK1, "$(DEV):STATUS_ALARM_FLAG_RBV")
+    field(LNK2, "$(DEV):STATUS_WARNING_FLAG_RBV")
 }
 
 record(bi, "$(DEV):STATUS_RUN_FLAG_RBV")
 {
     field(DESC, "Run status readback")
     field(INP,  "$(DEV):STATUS_RBV.B0 NPP NMS")
-    field(ZNAM, "STOP")
-    field(ONAM, "RUN")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
 }
 
 record(bi, "$(DEV):STATUS_ALARM_FLAG_RBV")
@@ -65,17 +70,22 @@ record(mbbiDirect, "$(DEV):ALARM_FLAG_1_RBV")
     field(INP,  "@asynMask(THERMOCON$(N)_read_reg,4,0xF80E)UINT16")
     field(SCAN, "2 second")
     field(VAL,  "0")
-    field(FLNK, "$(DEV):SYSTEM_ERROR_1_RBV.PROC")
-    field(FLNK, "$(DEV):SYSTEM_ERROR_2_RBV.PROC")
-    field(FLNK, "$(DEV):BACKUP_DATA_ERR_RBV.PROC")
-    field(FLNK, "$(DEV):DC_PWR_FAIL_RBV.PROC")
-    field(FLNK, "$(DEV):INT_HIGH_TEMP_FAIL_RBV.PROC")
-    field(FLNK, "$(DEV):INT_LOW_TEMP_FAIL_RBV.PROC")
-    field(FLNK, "$(DEV):THERMOSTAT_RBV.PROC")
-    field(FLNK, "$(DEV):ABNORMAL_OUT_RBV.PROC")
+    field(FLNK, "$(DEV):ALARM_FLAG_1_FANOUT")
 }
 
-record(bi, "$(DEV):SYSTEM_ERROR_1_RBV)"
+record(fanout, "$(DEV):ALARM_FLAG_1_FANOUT")
+{
+    field(LNK0, "$(DEV):SYSTEM_ERROR_1_RBV")
+    field(LNK1, "$(DEV):SYSTEM_ERROR_2_RBV")
+    field(LNK2, "$(DEV):BACKUP_DATA_ERR_RBV")
+    field(LNK3, "$(DEV):DC_PWR_FAIL_RBV")
+    field(LNK4, "$(DEV):INT_HIGH_TEMP_FAIL_RBV")
+    field(LNK5, "$(DEV):INT_LOW_TEMP_FAIL_RBV")
+    field(LNK6, "$(DEV):THERMOSTAT_RBV")
+    field(LNK7, "$(DEV):ABNORMAL_OUT_RBV")
+}
+
+record(bi, "$(DEV):SYSTEM_ERROR_1_RBV")
 {
     field(DESC, "System error 1")
     field(INP,  "$(DEV):ALARM_FLAG_1_RBV.B1 NPP NMS")
@@ -102,7 +112,7 @@ record(bi, "$(DEV):BACKUP_DATA_ERR_RBV")
 record(bi, "$(DEV):DC_PWR_FAIL_RBV")
 {
     field(DESC, "DC power supply failure")
-    field(INP,  "$(DEV):ALARM_FLAG_1_RBV.B11 NPP NMS")
+    field(INP,  "$(DEV):ALARM_FLAG_1_RBV.BB NPP NMS")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
 }
@@ -110,7 +120,7 @@ record(bi, "$(DEV):DC_PWR_FAIL_RBV")
 record(bi, "$(DEV):INT_HIGH_TEMP_FAIL_RBV")
 {
     field(DESC, "Internal High temperature failure")
-    field(INP,  "$(DEV):ALARM_FLAG_1.B12 NPP NMS")
+    field(INP,  "$(DEV):ALARM_FLAG_1_RBV.BC NPP NMS")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
 }
@@ -118,7 +128,7 @@ record(bi, "$(DEV):INT_HIGH_TEMP_FAIL_RBV")
 record(bi, "$(DEV):INT_LOW_TEMP_FAIL_RBV")
 {
     field(DESC, "Internal Low temperature failure")
-    field(INP,  "$(DEV):ALARM_FLAG_1.B13 NPP NMS")
+    field(INP,  "$(DEV):ALARM_FLAG_1_RBV.BD NPP NMS")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
 }
@@ -126,7 +136,7 @@ record(bi, "$(DEV):INT_LOW_TEMP_FAIL_RBV")
 record(bi, "$(DEV):THERMOSTAT_RBV")
 {
     field(DESC, "Thermostat alarm")
-    field(INP,  "$(DEV):ALARM_FLAG_1.B14 NPP NMS")
+    field(INP,  "$(DEV):ALARM_FLAG_1_RBV.BE NPP NMS")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
 }
@@ -134,7 +144,7 @@ record(bi, "$(DEV):THERMOSTAT_RBV")
 record(bi, "$(DEV):ABNORMAL_OUT_RBV")
 {
     field(DESC, "Abnormal outpt alarm")
-    field(INP,  "$(DEV):ALARM_FLAG_1.B15 NPP NMS")
+    field(INP,  "$(DEV):ALARM_FLAG_1_RBV.BF NPP NMS")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
 }
@@ -146,13 +156,18 @@ record(mbbiDirect, "$(DEV):ALARM_FLAG_2_RBV")
     field(INP,  "@asynMask(THERMOCON$(N)_read_reg,5,0x301F)UINT16")
     field(SCAN, "2 second")
     field(VAL,  "0")
-    field(FLNK, "$(DEV):LOW_FLOW_RBV.PROC")
-    field(FLNK, "$(DEV):INT_TEMP_SENS_DISCONNECT_RBV.PROC")
-    field(FLNK, "$(DEV):EXT_TEMP_SENS_DISCONNECT_RBV.PROC")
-    field(FLNK, "$(DEV):ABNORMAL_AUTO_TUNING_RBV.PROC")
-    field(FLNK, "$(DEV):LOW_FLUID_RBV.PROC")
-    field(FLNK, "$(DEV):TEMP_UPPER_LIM_RBV.PROC")
-    field(FLNK, "$(DEV):TEMP_LOW_LIM_RBV.PROC")
+    field(FLNK, "$(DEV):ALARM_FLAG_2_FANOUT")
+}
+
+record(fanout, "$(DEV):ALARM_FLAG_2_FANOUT")
+{
+    field(LNK0, "$(DEV):LOW_FLOW_RBV")
+    field(LNK1, "$(DEV):INT_TEMP_SENS_DISCONNECT_RBV")
+    field(LNK2, "$(DEV):EXT_TEMP_SENS_DISCONNECT_RBV")
+    field(LNK3, "$(DEV):ABNORMAL_AUTO_TUNING_RBV")
+    field(LNK4, "$(DEV):LOW_FLUID_RBV")
+    field(LNK5, "$(DEV):TEMP_UPPER_LIM_RBV")
+    field(LNK6, "$(DEV):TEMP_LOW_LIM_RBV")
 }
 
 record(bi, "$(DEV):LOW_FLOW_RBV")
@@ -165,7 +180,7 @@ record(bi, "$(DEV):LOW_FLOW_RBV")
 
 record(bi, "$(DEV):INT_TEMP_SENS_DISCONNECT_RBV")
 {
-    field(DESC, "Internal temp. sensor disconnection alarm")
+    field(DESC, "Internal temp sensor disconnection alarm")
     field(INP,  "$(DEV):ALARM_FLAG_2_RBV.B1 NPP NMS")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
@@ -173,7 +188,7 @@ record(bi, "$(DEV):INT_TEMP_SENS_DISCONNECT_RBV")
 
 record(bi, "$(DEV):EXT_TEMP_SENS_DISCONNECT_RBV")
 {
-    field(DESC, "External temp. sensor disconnetion alarm")
+    field(DESC, "External temp sensor disconnetion alarm")
     field(INP,  "$(DEV):ALARM_FLAG_2_RBV.B2 NPP NMS")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
@@ -198,7 +213,7 @@ record(bi, "$(DEV):LOW_FLUID_RBV")
 record(bi, "$(DEV):TEMP_UPPER_LIM_RBV")
 {
     field(DESC, "Temperature upper limit warning")
-    field(INP,  "$(DEV):ALARM_FLAG_2_RBV.B12 NPP NMS")
+    field(INP,  "$(DEV):ALARM_FLAG_2_RBV.BC NPP NMS")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
 }
@@ -206,7 +221,7 @@ record(bi, "$(DEV):TEMP_UPPER_LIM_RBV")
 record(bi, "$(DEV):TEMP_LOW_LIM_RBV")
 {
     field(DESC, "Temperature lower limit warning")
-    field(INP,  "$(DEV):ALARM_FLAG_2_RBV.B13 NPP NMS")
+    field(INP,  "$(DEV):ALARM_FLAG_2_RBV.BD NPP NMS")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
 }
@@ -226,7 +241,7 @@ record(calc, "$(DEV):OUT_RATIO_RBV")
     field(DESC, "Output ratio from -100% to 100%")
     field(INPA, "$(DEV):OUT_RATIO_RAW_RBV PP NMS")
     field(SCAN, "2 second")
-    field(CALC, "A&32768?-1*((~A) + 1):A")
+    field(CALC, "(A&65408) ? (-1*(((~A)&255) + 1)) : A")
     field(EGU,  "%")
 }
 
@@ -235,7 +250,7 @@ record(mbbi, "$(DEV):CTRL_OP_RBV")
     field(PINI, "YES")
     field(DESC, "Operation mode read back")
     field(DTYP, "asynUInt32Digital")
-    field(INP,  "@asynMask(THERMOCON$(N)_read_reg,0,0x0007)UINT16")
+    field(INP,  "@asynMask(THERMOCON$(N)_read_ctrl,0,0xFFFF)UINT16")
     field(SCAN, "2 second")
     field(ZRVL, "0")
     field(ONVL, "1")
@@ -246,7 +261,7 @@ record(mbbi, "$(DEV):CTRL_OP_RBV")
     field(ONST, "Normal operation")
     field(TWST, "Auto tuning start")
     field(THST, "Learning control")
-    field(FRST, "External tune control")   
+    field(FRST, "Ext. tune control")   
 }
 
 record(mbbo, "$(DEV):CTRL_OP_SET")
@@ -254,7 +269,7 @@ record(mbbo, "$(DEV):CTRL_OP_SET")
     field(DESC, "Set operation mode")
     field(OMSL, "supervisory")
     field(DTYP, "asynUInt32Digital")
-    field(OUT,  "@asynMask(THERMOCON$(N)_set_reg,0,0x0007)UINT16")
+    field(OUT,  "@asynMask(THERMOCON$(N)_set_ctrl,0,0xFFFF)UINT16")
     field(ZRVL, "0")
     field(ONVL, "1")
     field(TWVL, "2")
@@ -264,7 +279,26 @@ record(mbbo, "$(DEV):CTRL_OP_SET")
     field(ONST, "Normal operation")
     field(TWST, "Auto tuning start")
     field(THST, "Learning control")
-    field(FRST, "External tune control")   
+    field(FRST, "Ext. tune control")   
+}
+
+record(ai, "$(DEV):TARG_TEMP_RAW_RBV")
+{
+    field(PINI, "YES")
+    field(DESC, "Raw target temperature")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn(THERMOCON$(N)_read_ctrl,1)UINT16")
+    field(SCAN, "2 second")
+    field(VAL,  "0")
+}
+
+record(calc, "$(DEV):TARG_TEMP_RBV")
+{
+    field(DESC, "Target temperature in C")
+    field(INPA, "$(DEV):TARG_TEMP_RAW_RBV PP NMS")
+    field(SCAN, "2 second")
+    field(CALC, "A&32768?-1*((~A) + 1)/100:A/100")
+    field(EGU,  "C")
 }
 
 record(ao, "$(DEV):TARG_TEMP_SET")
@@ -292,5 +326,5 @@ record(longout, "$(DEV):TARG_TEMP_RAW_SET")
     field(DRVL, "1000")
     field(DRVH, "6000")
     field(DTYP, "asynInt32")
-    field(OUT,  "@asyn(THERMOCON$(N)_set_reg,1)UINT16")  
+    field(OUT,  "@asyn(THERMOCON$(N)_set_temp,0)UINT16")  
 }

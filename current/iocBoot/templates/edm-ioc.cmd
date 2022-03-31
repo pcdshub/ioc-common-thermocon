@@ -8,18 +8,12 @@ elif [ -e    /afs/slac/g/pcds/pyps/config/common_dirs.sh ]; then
 fi
 
 # Setup edm environment
-if [ -f    ${SETUP_SITE_TOP}/epicsenv-cur.sh ]; then
-	source ${SETUP_SITE_TOP}/epicsenv-cur.sh
-fi
+source /reg/g/pcds/pyps/conda/py36env.sh
 
 $$LOOP(THERMOCON)
 export IOC_PV=$$IOC_PV
 export BASE=$$BASE
 
-pushd $$IOCTOP
-#edm -x -eolc	\
-#	-m "IOC=${IOC_PV}"		\
-#       -m "BASE=${BASE}"               \
-#	thermoconScreens/thermocon.edm &
-echo 'No screens for $$BASE!!'
+pushd $$IOCTOP/thermoconScreens
+pydm -m "DEV=${BASE},IOC=${IOC_PV}" thermocon.ui &
 $$ENDLOOP(THERMOCON)
