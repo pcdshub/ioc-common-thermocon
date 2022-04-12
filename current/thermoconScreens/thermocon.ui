@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>460</width>
-    <height>585</height>
+    <height>610</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -31,6 +31,12 @@
     <height>1000</height>
    </size>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>11</pointsize>
+    <kerning>false</kerning>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
@@ -38,7 +44,7 @@
    <property name="geometry">
     <rect>
      <x>4</x>
-     <y>340</y>
+     <y>370</y>
      <width>451</width>
      <height>241</height>
     </rect>
@@ -700,13 +706,14 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>14</pointsize>
+     <pointsize>11</pointsize>
      <weight>75</weight>
      <bold>true</bold>
+     <kerning>false</kerning>
     </font>
    </property>
    <property name="text">
-    <string>THERMOCON CHILLER CONTROL SCREEN</string>
+    <string>THERMOCON CHILLER </string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -715,9 +722,9 @@
   <widget class="PyDMTimePlot" name="CurrentTempPlot">
    <property name="geometry">
     <rect>
-     <x>4</x>
-     <y>30</y>
-     <width>451</width>
+     <x>14</x>
+     <y>60</y>
+     <width>431</width>
      <height>171</height>
     </rect>
    </property>
@@ -746,7 +753,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>210</y>
+     <y>240</y>
      <width>161</width>
      <height>21</height>
     </rect>
@@ -767,7 +774,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>270</y>
+     <y>300</y>
      <width>291</width>
      <height>61</height>
     </rect>
@@ -883,7 +890,7 @@
    <property name="geometry">
     <rect>
      <x>310</x>
-     <y>270</y>
+     <y>300</y>
      <width>141</width>
      <height>81</height>
     </rect>
@@ -1065,7 +1072,7 @@
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>210</y>
+     <y>240</y>
      <width>71</width>
      <height>21</height>
     </rect>
@@ -1102,7 +1109,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>240</y>
+     <y>270</y>
      <width>161</width>
      <height>21</height>
     </rect>
@@ -1123,7 +1130,7 @@
    <property name="geometry">
     <rect>
      <x>270</x>
-     <y>210</y>
+     <y>240</y>
      <width>111</width>
      <height>21</height>
     </rect>
@@ -1144,7 +1151,7 @@
    <property name="geometry">
     <rect>
      <x>380</x>
-     <y>210</y>
+     <y>240</y>
      <width>71</width>
      <height>21</height>
     </rect>
@@ -1181,7 +1188,7 @@
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>240</y>
+     <y>270</y>
      <width>71</width>
      <height>21</height>
     </rect>
@@ -1209,7 +1216,7 @@
    <property name="geometry">
     <rect>
      <x>240</x>
-     <y>240</y>
+     <y>270</y>
      <width>71</width>
      <height>21</height>
     </rect>
@@ -1240,6 +1247,30 @@
    </property>
    <property name="channel" stdset="0">
     <string>ca://${DEV}:TARG_TEMP_RBV</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Tittle_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>30</y>
+     <width>451</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+     <kerning>false</kerning>
+    </font>
+   </property>
+   <property name="text">
+    <string>CONTROL SCREEN ${DEV}</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
  </widget>

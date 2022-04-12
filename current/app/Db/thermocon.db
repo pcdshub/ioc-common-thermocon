@@ -5,29 +5,30 @@
 
 record(ai, "$(DEV):TEMP_RAW_RBV")
 {       
-    field(PINI, "YES")
+#    field(PINI, "YES")
     field(DESC, "Raw internal sensor temp")
     field(DTYP, "asynInt32")
     field(INP,  "@asyn(THERMOCON$(N)_read_reg,0)UINT16")
-    field(SCAN, "2 second")
+    field(SCAN, "5 second")
     field(VAL,  "0")
+    field(FLNK, "$(DEV):TEMP_RBV")
 }
  
 record(calc, "$(DEV):TEMP_RBV")
 {
     field(DESC, "internal sensor temp in C")
     field(INPA, "$(DEV):TEMP_RAW_RBV PP NMS")
-    field(SCAN, "2 second")
+#    field(SCAN, "5 second")
     field(CALC, "A&32768?-1*((~A) + 1)/100:A/100")
     field(EGU,  "C")
 }
 
 record(mbbiDirect, "$(DEV):STATUS_RBV")
 {       
-    field(PINI, "YES")
+#    field(PINI, "YES")
     field(DTYP, "asynUInt32Digital")
     field(INP,  "@asynMask(THERMOCON$(N)_read_reg,3,0x0007)UINT16")
-    field(SCAN, "2 second")
+    field(SCAN, "5 second")
     field(VAL,  "0")
     field(FLNK, "$(DEV):STATUS_FANOUT")
 }
@@ -65,10 +66,10 @@ record(bi, "$(DEV):STATUS_WARNING_FLAG_RBV")
 
 record(mbbiDirect, "$(DEV):ALARM_FLAG_1_RBV")
 {       
-    field(PINI, "YES")
+#    field(PINI, "YES")
     field(DTYP, "asynUInt32Digital")
     field(INP,  "@asynMask(THERMOCON$(N)_read_reg,4,0xF80E)UINT16")
-    field(SCAN, "2 second")
+    field(SCAN, "5 second")
     field(VAL,  "0")
     field(FLNK, "$(DEV):ALARM_FLAG_1_FANOUT")
 }
@@ -151,10 +152,10 @@ record(bi, "$(DEV):ABNORMAL_OUT_RBV")
 
 record(mbbiDirect, "$(DEV):ALARM_FLAG_2_RBV")
 {       
-    field(PINI, "YES")
+#    field(PINI, "YES")
     field(DTYP, "asynUInt32Digital")
     field(INP,  "@asynMask(THERMOCON$(N)_read_reg,5,0x301F)UINT16")
-    field(SCAN, "2 second")
+    field(SCAN, "5 second")
     field(VAL,  "0")
     field(FLNK, "$(DEV):ALARM_FLAG_2_FANOUT")
 }
@@ -228,9 +229,9 @@ record(bi, "$(DEV):TEMP_LOW_LIM_RBV")
 
 record(ai, "$(DEV):OUT_RATIO_RAW_RBV")
 {       
-    field(PINI, "YES")
+#    field(PINI, "YES")
     field(DESC, "Raw output ratio data")
-    field(SCAN, "2 second")
+    field(SCAN, "5 second")
     field(DTYP, "asynInt32")
     field(INP,  "@asyn(THERMOCON$(N)_read_reg,6)UINT16")
     field(VAL,  "0")
@@ -240,18 +241,18 @@ record(calc, "$(DEV):OUT_RATIO_RBV")
 {
     field(DESC, "Output ratio from -100% to 100%")
     field(INPA, "$(DEV):OUT_RATIO_RAW_RBV PP NMS")
-    field(SCAN, "2 second")
+    field(SCAN, "5 second")
     field(CALC, "(A&65408) ? (-1*(((~A)&255) + 1)) : A")
     field(EGU,  "%")
 }
 
 record(mbbi, "$(DEV):CTRL_OP_RBV")
 {
-    field(PINI, "YES")
+#    field(PINI, "YES")
     field(DESC, "Operation mode read back")
     field(DTYP, "asynUInt32Digital")
     field(INP,  "@asynMask(THERMOCON$(N)_read_ctrl,0,0xFFFF)UINT16")
-    field(SCAN, "2 second")
+    field(SCAN, "5 second")
     field(ZRVL, "0")
     field(ONVL, "1")
     field(TWVL, "2")
@@ -284,11 +285,12 @@ record(mbbo, "$(DEV):CTRL_OP_SET")
 
 record(ai, "$(DEV):TARG_TEMP_RAW_RBV")
 {
-    field(PINI, "YES")
+#    field(PINI, "YES")
     field(DESC, "Raw target temperature")
     field(DTYP, "asynInt32")
     field(INP,  "@asyn(THERMOCON$(N)_read_ctrl,1)UINT16")
-    field(SCAN, "2 second")
+    field(SCAN, "5 second")
+    field(FLNK, "$(DEV):TARG_TEMP_RBV")
     field(VAL,  "0")
 }
 
@@ -296,7 +298,7 @@ record(calc, "$(DEV):TARG_TEMP_RBV")
 {
     field(DESC, "Target temperature in C")
     field(INPA, "$(DEV):TARG_TEMP_RAW_RBV PP NMS")
-    field(SCAN, "2 second")
+#    field(SCAN, "5 second")
     field(CALC, "A&32768?-1*((~A) + 1)/100:A/100")
     field(EGU,  "C")
 }

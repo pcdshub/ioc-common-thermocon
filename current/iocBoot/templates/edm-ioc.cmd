@@ -10,10 +10,11 @@ fi
 # Setup edm environment
 source /reg/g/pcds/pyps/conda/py36env.sh
 
+pushd $$IOCTOP/thermoconScreens
+
 $$LOOP(THERMOCON)
 export IOC_PV=$$IOC_PV
 export BASE=$$BASE
 
-pushd $$IOCTOP/thermoconScreens
 pydm -m "DEV=${BASE},IOC=${IOC_PV}" thermocon.ui &
 $$ENDLOOP(THERMOCON)
