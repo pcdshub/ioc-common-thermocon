@@ -18,7 +18,7 @@ thermocon_DBD += base.dbd
 thermocon_DBD += iocAdmin.dbd
 thermocon_DBD += asSupport.dbd
 thermocon_DBD += asyn.dbd
-thermocon_DBD += stream.dbd
+#thermocon_DBD += stream.dbd
 thermocon_DBD += modbus.dbd
 thermocon_DBD += modbusSupport.dbd
 thermocon_DBD += caPutLog.dbd
@@ -30,7 +30,7 @@ thermocon_SRCS_DEFAULT += thermoconMain.cpp
 # Add locally compiled object code
 #thermocon_SRCS += dbSubExample.c
 
-thermocon_LIBS += stream
+#thermocon_LIBS += stream
 #thermocon_LIBS += calc
 
 thermocon_LIBS += autosave

@@ -18,4 +18,9 @@ file archive_SR.tpl-arch
 	}
 }
 
-# TODO: Add your custom template expansions here
+# Add your custom template expansions here
+file thermocon.tpl-arch
+{
+    { BASE = $(BASE) }
+}
+
