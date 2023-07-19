@@ -22,6 +22,25 @@ record(calc, "$(DEV):TEMP_RBV")
     field(EGU,  "C")
 }
 
+record(ai, "$(DEV):EXT_TEMP_RAW_RBV")
+{       
+#    field(PINI, "YES")
+    field(DESC, "Raw external sensor temp")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn(THERMOCON$(N)_read_reg,1)UINT16")
+    field(SCAN, "1 second")
+    field(VAL,  "0")
+    field(FLNK, "$(DEV):EXT_TEMP_RBV")
+}
+ 
+record(calc, "$(DEV):EXT_TEMP_RBV")
+{
+    field(DESC, "external sensor temp in C")
+    field(INPA, "$(DEV):EXT_TEMP_RAW_RBV PP NMS")
+    field(CALC, "A&32768?-1*((~A) + 1)/100:A/100")
+    field(EGU,  "C")
+}
+
 record(mbbiDirect, "$(DEV):STATUS_RBV")
 {       
 #    field(PINI, "YES")
