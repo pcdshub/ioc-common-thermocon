@@ -13,11 +13,34 @@ record(ai, "$(DEV):TEMP_RAW_RBV")
     field(VAL,  "0")
     field(FLNK, "$(DEV):TEMP_RBV")
 }
- 
+
+# Internal and external temperature is returned as a 2's complement, 16bit
+# fixed point representation. The calculation below for TEMP_RBV and
+# EXT_TEMP_RBV convert first from a 2's complement UINT to a signed int, and
+# then apply the fixed point scaling (0.01deg/lsb). 
 record(calc, "$(DEV):TEMP_RBV")
 {
     field(DESC, "internal sensor temp in C")
     field(INPA, "$(DEV):TEMP_RAW_RBV PP NMS")
+    field(CALC, "A&32768?-1*((~A) + 1)/100:A/100")
+    field(EGU,  "C")
+}
+
+record(ai, "$(DEV):EXT_TEMP_RAW_RBV")
+{       
+#    field(PINI, "YES")
+    field(DESC, "Raw external sensor temp")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn(THERMOCON$(N)_read_reg,1)UINT16")
+    field(SCAN, "1 second")
+    field(VAL,  "0")
+    field(FLNK, "$(DEV):EXT_TEMP_RBV")
+}
+ 
+record(calc, "$(DEV):EXT_TEMP_RBV")
+{
+    field(DESC, "external sensor temp in C")
+    field(INPA, "$(DEV):EXT_TEMP_RAW_RBV PP NMS")
     field(CALC, "A&32768?-1*((~A) + 1)/100:A/100")
     field(EGU,  "C")
 }
