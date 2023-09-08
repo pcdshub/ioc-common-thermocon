@@ -1,9 +1,20 @@
-__pycache__
-*~
-O.*
+# EPICS generated folders
+dbd
+lib
+bin
+children/build
+db
 archive
 autosave
-bin
-db
-dbd
-build
+
+# EPICS object files
+**/O.*
+
+# Generated files
+**envPaths
+
+# Python temp files
+__pycache__/
+
+# Dev files
+run.sh
