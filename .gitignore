@@ -1,20 +1,35 @@
-# EPICS generated folders
-dbd
-lib
-bin
-children/build
-db
+# Built file ignores
+O.*
 archive
 autosave
+bin
+build
+db
+dbd
+envPaths
+html
+include
+lib
+*.log
 
+# Terminal editor ignores
+*.swp
+*~
+
+# IDE ignores
+*.vscode
+
+# Core dumps
+core.*
+
+# From original afs gitignore
+# EPICS generated folders
+children/build
 # EPICS object files
 **/O.*
-
 # Generated files
 **envPaths
-
 # Python temp files
-__pycache__/
-
+__pycache__
 # Dev files
 run.sh
