@@ -351,3 +351,99 @@ record(longout, "$(DEV):TARG_TEMP_RAW_SET")
     field(DTYP, "asynInt32")
     field(OUT,  "@asyn(THERMOCON$(N)_set_temp,0)UINT16")  
 }
+
+record(ai, "$(DEV):OFFSET_VALUE_RAW_RBV")
+{
+    field(DESC, "Raw temp. offset value")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn(THERMOCON$(N)_read_ctrl,2)UINT16")
+    field(SCAN, "1 second")
+    field(FLNK, "$(DEV):OFFSET_VALUE_RBV")
+    field(VAL,  "0")
+}
+
+record(calc, "$(DEV):OFFSET_VALUE_RBV")
+{
+    field(DESC, "Temperature Offset value in C")
+    field(INPA, "$(DEV):OFFSET_VALUE_RAW_RBV PP NMS")
+    field(CALC, "A&32768?-1*((~A) + 1)/100:A/100")
+    field(PREC, "2")
+    field(EGU,  "C")
+}
+
+record(ai, "$(DEV):PB_RANGE_RAW_RBV")
+{
+    field(DESC, "Raw temp. offset value")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn(THERMOCON$(N)_read_ctrl,3)UINT16")
+    field(SCAN, "1 second")
+    field(FLNK, "$(DEV):PB_RANGE_RBV")
+    field(VAL,  "0")
+}
+
+record(calc, "$(DEV):PB_RANGE_RBV")
+{
+    field(DESC, "Temperature Offset value in C")
+    field(INPA, "$(DEV):PB_RANGE_RAW_RBV PP NMS")
+    field(CALC, "A&32768?-1*((~A) + 1)/100:A/100")
+    field(PREC, "2")
+    field(EGU,  "C")
+}
+
+record(ai, "$(DEV):I_CONSTANT_RBV")
+{
+    field(DESC, "I constant for control loop")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn(THERMOCON$(N)_read_ctrl,5)UINT16")
+    field(SCAN, "1 second")
+    field(VAL,  "0")
+    field(EGU,  "sec")
+}
+
+record(ai, "$(DEV):D_CONSTANT_RAW_RBV")
+{
+    field(DESC, "Raw D constant for control loop")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn(THERMOCON$(N)_read_ctrl,6)UINT16")
+    field(SCAN, "1 second")
+    field(FLNK, "$(DEV):D_CONSTANT_RBV")
+    field(VAL,  "0")
+}
+
+record(calc, "$(DEV):D_CONSTANT_RBV")
+{
+    field(DESC, "D constant for control loop")
+    field(INPA, "$(DEV):D_CONSTANT_RAW_RBV PP NMS")
+    field(CALC, "A&32768?-1*((~A) + 1)/100:A/100")
+    field(PREC, "2")
+    field(EGU,  "sec")
+}
+
+record(ai, "$(DEV):HEAT_OUT_LIMIT_RBV")
+{       
+    field(DESC, "Heater out limit from 0% to 100%")
+    field(SCAN, "1 second")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn(THERMOCON$(N)_read_ctrl,7)UINT16")
+    field(VAL,  "0")
+    field(EGU,  "%")
+}
+ 
+record(ai, "$(DEV):COOL_OUT_LIMIT_RAW_RBV")
+{       
+    field(DESC, "Raw Cooler out limit")
+    field(SCAN, "1 second")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn(THERMOCON$(N)_read_ctrl,8)UINT16")
+    field(VAL,  "0")
+    field(FLNK, "$(DEV):COOL_OUT_LIMIT_RBV")
+}
+ 
+record(calc, "$(DEV):COOL_OUT_LIMIT_RBV")
+{
+    field(DESC, "Cooler out limit from -100% to 0%")
+    field(INPA, "$(DEV):COOL_OUT_LIMIT_RAW_RBV PP NMS")
+    field(CALC, "(A&65408) ? (-1*(((~A)&255) + 1)) : A")
+    field(EGU,  "%")
+}
+
