@@ -11,31 +11,16 @@
 # Set this when you only want to compile this application
 # for a subset of the cross-compiled target architectures
 # that Base is built for.
-CROSS_COMPILER_TARGET_ARCHS = 
+# CROSS_COMPILER_TARGET_ARCHS = RTEMS-beatnik linux-x86 linux-x86_64
+CROSS_COMPILER_TARGET_ARCHS =
+# PCDS: Only build the linux-x86 cross target if host is linux-x86_64
+ifeq '$(EPICS_HOST_ARCH)' 'linux-x86_64'
+CROSS_COMPILER_TARGET_ARCHS += linux-x86
+endif
 
-PKG_ARCH    = $(T_A)
-
-# Configure which 3rd party libraries to use and where to find them.
-# For each library XXX the following definitions are used:
-# WITH_XXX      Build the plugins and drivers that require this library.
-#               Build the source code for this library in ADSupport if XXX_EXTERNAL=NO.
-# XXX_EXTERNAL  If NO then build the source code for this library in ADSupport.
-# XXX_INCLUDE   If XXX_EXTERNAL=YES then this is the path to the include files for XXX.
-#               However, if XXX is a system library whose include files are in a 
-#               standard include search path then do not define XXX_INCLUDE.
-# XXX_LIB       If XXX_EXTERNAL=YES then this is the path to the library files for XXX.
-#               However, if XXX is a system library whose library files in a 
-#               standard library search path then do not define XXX_LIB.
-#
-
-# EPICS_V4 is required for NDPluginPva and pvaDriver
-WITH_EPICS_V4  = YES
-# As of R3-2 WITH_EPICS_V4 changes to WITH_PVA
-WITH_PVA  = YES
-
-# To install files into a location other than $(TOP) define
-#   INSTALL_LOCATION here.
-#INSTALL_LOCATION=</path/name/to/install/top>
+# If you do NOT want to build for the host architecture,
+# clear BUILD_FOR_HOST_ARCH
+# BUILD_FOR_HOST_ARCH = 
 
 # Set this when your IOC and the host use different paths
 # to access the application. This will be needed to boot
@@ -46,11 +31,5 @@ WITH_PVA  = YES
 
 # If you don't want to install into $(TOP) then
 # define INSTALL_LOCATION here
+#INSTALL_LOCATION=<fullpathname>
 
-# Settings for static and shared build options
-STATIC_BUILD=YES
-SHARED_LIBRARIES=YES
-
-ifneq '$(wildcard $(EVENT2))' ''
-USR_CFLAGS += -DUSE_EVR_IRQ_HANDLER
-endif
