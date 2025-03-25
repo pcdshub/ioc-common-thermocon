@@ -7,7 +7,7 @@ include $(TOP)/RELEASE_SITE
 # IOC apps or other Support apps
 # ===============================================================
 ASYN_MODULE_VERSION                 = R4.39-1.0.2
-AUTOSAVE_MODULE_VERSION             = R5.8-2.1.0
+AUTOSAVE_MODULE_VERSION             = R5.11-2.0.0
 CALC_MODULE_VERSION                 = R3.7-1.0.1
 IOCADMIN_MODULE_VERSION             = R3.1.16-1.4.0
 MODBUS_MODULE_VERSION               = R3.2-1.0.2
