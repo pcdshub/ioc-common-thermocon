@@ -6,3 +6,9 @@ $(BASE):STATUS_RUN_FLAG_RBV         5 monitor
 $(BASE):STATUS_ALARM_FLAG_RBV       5 monitor
 $(BASE):STATUS_WARNING_FLAG_RBV     5 monitor
 $(BASE):OUT_RATIO_RBV               5 monitor
+$(BASE):OFFSET_VALUE_RBV            5 monitor
+$(BASE):PB_RANGE_RBV                5 monitor
+$(BASE):I_CONSTANT_RBV              5 monitor
+$(BASE):D_CONSTANT_RBV              5 monitor
+$(BASE):HEAT_OUT_LIMIT_RBV          5 monitor
+$(BASE):COOL_OUT_LIMIT_RBV          5 monitor

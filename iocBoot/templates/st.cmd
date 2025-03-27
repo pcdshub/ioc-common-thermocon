@@ -31,9 +31,9 @@ $$ENDLOOP(THERMOCON)
 
 $$LOOP(THERMOCON)
 drvModbusAsynConfigure(  "THERMOCON$$(INDEX)_read_reg" , "THERMOCON$$INDEX",  1,   3,  64,  7,  0,  2000, "THERMOCON$$(INDEX)_Read"    )
-drvModbusAsynConfigure(  "THERMOCON$$(INDEX)_read_ctrl", "THERMOCON$$INDEX",  1,   3,  80,  2,  0,  2000, "THERMOCON$$(INDEX)_ReadCtrl")
-drvModbusAsynConfigure(  "THERMOCON$$(INDEX)_set_ctrl" , "THERMOCON$$INDEX",  1,   6,  80,  1,  0,  2000, "THERMOCON$$(INDEX)_SetCtrl" )
-drvModbusAsynConfigure(  "THERMOCON$$(INDEX)_set_temp" , "THERMOCON$$INDEX",  1,   6,  81,  1,  0,  2000, "THERMOCON$$(INDEX)_SetTemp" )
+drvModbusAsynConfigure(  "THERMOCON$$(INDEX)_read_ctrl", "THERMOCON$$INDEX",  1,   3,  80,  9,  0,  2000, "THERMOCON$$(INDEX)_ReadCtrl")
+drvModbusAsynConfigure(  "THERMOCON$$(INDEX)_set_ctrl" , "THERMOCON$$INDEX",  1,   6,  80,  9,  0,  2000, "THERMOCON$$(INDEX)_SetCtrl" )
+#drvModbusAsynConfigure(  "THERMOCON$$(INDEX)_set_temp" , "THERMOCON$$INDEX",  1,   6,  81,  1,  0,  2000, "THERMOCON$$(INDEX)_SetTemp" )
 
 # USED AS DEBUGGING TOOL
 #asynSetTraceIOMask("THERMOCON$$INDEX", 0, 0x6)

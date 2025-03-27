@@ -3,11 +3,4 @@ This is an EPICS IOC that is used at LCLS. This repo was automatically transferr
 
 The original filesystem location was /afs/slac.stanford.edu/g/cd/swe/git/repos/package/epics/ioc/common/thermocon.git.
 
-
-## Original readme files
-### README
-Serial communcation in my case only worked with DIGI terminal server.
-
-### README.md
-# ioc-thermocon
-
+Documentation: https://confluence.slac.stanford.edu/spaces/PCDS/pages/392822891/SMC+Thermocon+HECR008

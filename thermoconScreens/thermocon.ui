@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>460</width>
-    <height>645</height>
+    <width>459</width>
+    <height>660</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -43,14 +43,14 @@
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>4</x>
-     <y>400</y>
-     <width>451</width>
+     <x>0</x>
+     <y>415</y>
+     <width>456</width>
      <height>241</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -59,35 +59,6 @@
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="3" column="1">
-        <widget class="PyDMByteIndicator" name="PyDMByteIndicator_6">
-         <property name="maximumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="channel" stdset="0">
-          <string>ca://${DEV}:BACKUP_DATA_ERR_RBV</string>
-         </property>
-         <property name="onColor" stdset="0">
-          <color>
-           <red>255</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </property>
-         <property name="showLabels" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="circles" stdset="0">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
        <item row="7" column="1">
         <widget class="PyDMByteIndicator" name="PyDMByteIndicator_10">
          <property name="maximumSize">
@@ -117,8 +88,8 @@
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
-        <widget class="PyDMByteIndicator" name="PyDMByteIndicator_7">
+       <item row="6" column="1">
+        <widget class="PyDMByteIndicator" name="PyDMByteIndicator_9">
          <property name="maximumSize">
           <size>
            <width>20</width>
@@ -129,7 +100,7 @@
           <string/>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${DEV}:DC_PWR_FAIL_RBV</string>
+          <string>ca://${DEV}:INT_LOW_TEMP_FAIL_RBV</string>
          </property>
          <property name="onColor" stdset="0">
           <color>
@@ -175,134 +146,6 @@
          </property>
         </widget>
        </item>
-       <item row="5" column="0">
-        <widget class="PyDMLabel" name="PyDMLabel_6">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>INTERNAL TEMPERATURE SENSOR HIGH TEMPERATURE FAILURE</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="1">
-        <widget class="PyDMByteIndicator" name="PyDMByteIndicator_11">
-         <property name="maximumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="channel" stdset="0">
-          <string>ca://${DEV}:ABNORMAL_OUT_RBV</string>
-         </property>
-         <property name="onColor" stdset="0">
-          <color>
-           <red>255</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </property>
-         <property name="showLabels" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="circles" stdset="0">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="PyDMLabel" name="PyDMLabel_4">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>BACK-UP DATA ERROR</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="PyDMByteIndicator" name="PyDMByteIndicator_9">
-         <property name="maximumSize">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="channel" stdset="0">
-          <string>ca://${DEV}:INT_LOW_TEMP_FAIL_RBV</string>
-         </property>
-         <property name="onColor" stdset="0">
-          <color>
-           <red>255</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-         </property>
-         <property name="showLabels" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="circles" stdset="0">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="PyDMLabel" name="PyDMLabel_5">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>DC POWER SUPPLY FAILURE</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="PyDMLabel" name="PyDMLabel_3">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>SYSTEM ERROR 2</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="PyDMLabel" name="PyDMLabel_7">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>INTERNAL TEMPERATURE SENSOR LOW TEMPERATURE FAILURE</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0">
-        <widget class="PyDMLabel" name="PyDMLabel_8">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>THERMOSTAT ALARM</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0">
-        <widget class="PyDMLabel" name="PyDMLabel_9">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>ABNORMAL OUTPUT ALARM</string>
-         </property>
-        </widget>
-       </item>
        <item row="2" column="1">
         <widget class="PyDMByteIndicator" name="PyDMByteIndicator_5">
          <property name="maximumSize">
@@ -339,13 +182,90 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="PyDMLabel" name="PyDMLabel_2">
+       <item row="3" column="1">
+        <widget class="PyDMByteIndicator" name="PyDMByteIndicator_6">
+         <property name="maximumSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
          <property name="toolTip">
           <string/>
          </property>
-         <property name="text">
-          <string>SYSTEM ERROR 1</string>
+         <property name="channel" stdset="0">
+          <string>ca://${DEV}:BACKUP_DATA_ERR_RBV</string>
+         </property>
+         <property name="onColor" stdset="0">
+          <color>
+           <red>255</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </property>
+         <property name="showLabels" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="circles" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="PyDMByteIndicator" name="PyDMByteIndicator_7">
+         <property name="maximumSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="channel" stdset="0">
+          <string>ca://${DEV}:DC_PWR_FAIL_RBV</string>
+         </property>
+         <property name="onColor" stdset="0">
+          <color>
+           <red>255</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </property>
+         <property name="showLabels" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="circles" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="PyDMByteIndicator" name="PyDMByteIndicator_11">
+         <property name="maximumSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="channel" stdset="0">
+          <string>ca://${DEV}:ABNORMAL_OUT_RBV</string>
+         </property>
+         <property name="onColor" stdset="0">
+          <color>
+           <red>255</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </property>
+         <property name="showLabels" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="circles" stdset="0">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -385,6 +305,126 @@
          </property>
         </widget>
        </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="CurrentTempText_7">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>SYSTEM ERROR 1</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="CurrentTempText_8">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>SYSTEM ERROR 2</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="CurrentTempText_9">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>BACK-UP DATA ERROR</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="CurrentTempText_10">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>DC POWER SUPPLY FAILURE</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="CurrentTempText_11">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>INTERNAL TEMP. SENSOR HIGH TEMP. FAILURE</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="CurrentTempText_12">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>INTERNAL TEMP. SENSOR LOW TEMP. FAILURE</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="CurrentTempText_13">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>THERMOSTAT ALARM</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="CurrentTempText_14">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>ABNORMAL OUTPUT ALARM</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
       </layout>
      </item>
     </layout>
@@ -396,16 +436,6 @@
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
       <layout class="QGridLayout" name="gridLayout_3">
-       <item row="7" column="0">
-        <widget class="PyDMLabel" name="PyDMLabel_14">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>ABNORMAL AUTO TUNING ALARM</string>
-         </property>
-        </widget>
-       </item>
        <item row="8" column="1">
         <widget class="PyDMByteIndicator" name="PyDMByteIndicator_17">
          <property name="maximumSize">
@@ -507,36 +537,6 @@
          </property>
         </widget>
        </item>
-       <item row="9" column="0">
-        <widget class="PyDMLabel" name="PyDMLabel_12">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>TEMPERATURE UPPER LIMIT</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0">
-        <widget class="PyDMLabel" name="PyDMLabel_13">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>LOW FLUID LEVEL ALARM</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="PyDMLabel" name="PyDMLabel_15">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>EXTERNAL TEMPERATURE SENSOR DISCONNECTION ALARM</string>
-         </property>
-        </widget>
-       </item>
        <item row="4" column="1">
         <widget class="PyDMByteIndicator" name="PyDMByteIndicator_14">
          <property name="maximumSize">
@@ -563,26 +563,6 @@
          </property>
          <property name="circles" stdset="0">
           <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="PyDMLabel" name="PyDMLabel_10">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>LOW CIRCULATING FLOW RATE ALARM</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="PyDMLabel" name="PyDMLabel_16">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>INTERNAL TEMPERATURE SENSOR DISCONNECTION ALARM</string>
          </property>
         </widget>
        </item>
@@ -680,19 +660,678 @@
          </property>
         </widget>
        </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="CurrentTempText_15">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>LOW CIRCULATING FLOW RATE ALARM</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="CurrentTempText_16">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>INTERNAL TEMP. SENSOR DISCONNECTION ALARM</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="CurrentTempText_17">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>EXTERNAL TEMP. SENSOR DISCONNECTION ALARM</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="CurrentTempText_18">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>ABNORMAL AUTO TUNING ALARM</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="CurrentTempText_19">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>LOW FLUID LEVEL ALARM</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="CurrentTempText_20">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>TEMPERATURE UPPER LIMIT</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
        <item row="10" column="0">
-        <widget class="PyDMLabel" name="PyDMLabel_11">
-         <property name="toolTip">
-          <string/>
+        <widget class="QLabel" name="CurrentTempText_21">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
          </property>
          <property name="text">
           <string>TEMPERATURE LOWER LIMIT</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
       </layout>
      </item>
     </layout>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>PID Parameters</string>
+    </attribute>
+    <widget class="QWidget" name="gridLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>451</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="5" column="0">
+       <widget class="QLabel" name="OutputRatioText_3">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Cooling Output limit  [%]:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="PyDMLabel" name="CurrentTemp_4">
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="text">
+         <string>XXXXXXXXX</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="precision" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="showUnits" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="precisionFromPV" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="alarmSensitiveContent" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="PyDMToolTip" stdset="0">
+         <string/>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://${DEV}:PB_RANGE_RBV</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="PyDMLabel" name="CurrentTemp_5">
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="text">
+         <string>XXXXXXXXX</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="precision" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="showUnits" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="precisionFromPV" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="alarmSensitiveContent" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="PyDMToolTip" stdset="0">
+         <string/>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://${DEV}:I_CONSTANT_RBV</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QLabel" name="CurrentTempText_23">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>0.30 to 9.90 [°C]</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="CurrentTempText_5">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>I Constant [sec]:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="CurrentTempText_6">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>D Constant [sec]:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="CurrentTempText_3">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Offset Value [°C]:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="PyDMLineEdit" name="TargetTemp_4">
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="precision" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="showUnits" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="precisionFromPV" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://${DEV}:I_CONSTANT_SET</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="PyDMLabel" name="CurrentTemp_6">
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="text">
+         <string>XXXXXXXXX</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="precision" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="showUnits" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="precisionFromPV" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="alarmSensitiveContent" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="PyDMToolTip" stdset="0">
+         <string/>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://${DEV}:D_CONSTANT_RBV</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="PyDMLineEdit" name="TargetTemp_3">
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="precision" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="showUnits" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="precisionFromPV" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://${DEV}:PB_RANGE_SET</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="PyDMLabel" name="OutputRatio_2">
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="text">
+         <string>XXXXXXXXX</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="precision" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="showUnits" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="precisionFromPV" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://${DEV}:HEAT_OUT_LIMIT_RBV</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="PyDMLineEdit" name="TargetTemp_2">
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="precision" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="showUnits" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="precisionFromPV" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://${DEV}:OFFSET_SET</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="3">
+       <widget class="QLabel" name="CurrentTempText_26">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>0 to 100 [%]</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="PyDMLineEdit" name="TargetTemp_5">
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="precision" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="showUnits" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="precisionFromPV" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://${DEV}:D_CONSTANT_SET</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="PyDMLineEdit" name="TargetTemp_7">
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="precision" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="showUnits" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="precisionFromPV" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://${DEV}:COOL_OUT_LIMIT_SET</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="CurrentTempText_4">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>PB Range [°C]:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="OutputRatioText_2">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Heat Output limit  [%]:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="3">
+       <widget class="QLabel" name="CurrentTempText_27">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>-100 to 0 [%]</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QLabel" name="CurrentTempText_24">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>1 to 999 [sec]</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="2">
+       <widget class="PyDMLabel" name="CurrentTemp_3">
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="text">
+         <string>XXXXXXXXX</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="precision" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="showUnits" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="precisionFromPV" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="alarmSensitiveContent" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="PyDMToolTip" stdset="0">
+         <string/>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://${DEV}:OFFSET_VALUE_RBV</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QLabel" name="CurrentTempText_22">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>-9.99 to 9.99 [°C]</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3">
+       <widget class="QLabel" name="CurrentTempText_25">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>0.00 to 99.90 [sec]</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="2">
+       <widget class="PyDMLabel" name="OutputRatio_3">
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="text">
+         <string>XXXXXXXXX</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="precision" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="showUnits" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="precisionFromPV" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://${DEV}:COOL_OUT_LIMIT_RBV</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="PyDMLineEdit" name="TargetTemp_6">
+        <property name="toolTip">
+         <string/>
+        </property>
+        <property name="precision" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="showUnits" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="precisionFromPV" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://${DEV}:HEAT_OUT_LIMIT_SET</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
   </widget>
   <widget class="QLabel" name="Tittle">
@@ -722,9 +1361,9 @@
   <widget class="PyDMTimePlot" name="CurrentTempPlot">
    <property name="geometry">
     <rect>
-     <x>14</x>
+     <x>4</x>
      <y>60</y>
-     <width>431</width>
+     <width>451</width>
      <height>171</height>
     </rect>
    </property>
@@ -739,8 +1378,7 @@
    </property>
    <property name="yAxes">
     <stringlist>
-     <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true, &quot;logMode&quot;: null}</string>
-     <string>{&quot;name&quot;: &quot;Temp&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true, &quot;logMode&quot;: null}</string>
+     <string>{&quot;name&quot;: &quot;Temp&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;label&quot;: null, &quot;minRange&quot;: -1.6010322185676804, &quot;maxRange&quot;: 1.6010322185676804, &quot;autoRange&quot;: true, &quot;logMode&quot;: null}</string>
     </stringlist>
    </property>
    <property name="curves">
@@ -1093,13 +1731,13 @@
     <set>Qt::AlignCenter</set>
    </property>
    <property name="precision" stdset="0">
-    <number>2</number>
+    <number>0</number>
    </property>
    <property name="showUnits" stdset="0">
     <bool>true</bool>
    </property>
    <property name="precisionFromPV" stdset="0">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="channel" stdset="0">
     <string>ca://${DEV}:TEMP_RBV</string>
@@ -1172,13 +1810,13 @@
     <set>Qt::AlignCenter</set>
    </property>
    <property name="precision" stdset="0">
-    <number>2</number>
+    <number>0</number>
    </property>
    <property name="showUnits" stdset="0">
     <bool>true</bool>
    </property>
    <property name="precisionFromPV" stdset="0">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="channel" stdset="0">
     <string>ca://${DEV}:OUT_RATIO_RBV</string>
@@ -1197,13 +1835,13 @@
     <string/>
    </property>
    <property name="precision" stdset="0">
-    <number>2</number>
+    <number>0</number>
    </property>
    <property name="showUnits" stdset="0">
     <bool>true</bool>
    </property>
    <property name="precisionFromPV" stdset="0">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="alarmSensitiveBorder" stdset="0">
     <bool>false</bool>
@@ -1237,13 +1875,13 @@
     <set>Qt::AlignCenter</set>
    </property>
    <property name="precision" stdset="0">
-    <number>2</number>
+    <number>0</number>
    </property>
    <property name="showUnits" stdset="0">
     <bool>true</bool>
    </property>
    <property name="precisionFromPV" stdset="0">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="channel" stdset="0">
     <string>ca://${DEV}:TARG_TEMP_RBV</string>
@@ -1298,13 +1936,13 @@
     <set>Qt::AlignCenter</set>
    </property>
    <property name="precision" stdset="0">
-    <number>2</number>
+    <number>0</number>
    </property>
    <property name="showUnits" stdset="0">
     <bool>true</bool>
    </property>
    <property name="precisionFromPV" stdset="0">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="alarmSensitiveContent" stdset="0">
     <bool>false</bool>
